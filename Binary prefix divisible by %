@@ -1,0 +1,15 @@
+class Solution {
+public:
+    vector<bool> prefixesDivBy5(vector<int>& A) {
+    vector<bool> v;
+    int number=0 ,count = 0;
+    for(int i=0;i<A.size();i++){
+        number = number*2 + A[i];
+        if(number%5==0)
+            v.push_back(true);
+        else
+            v.push_back(false);
+    }
+    return v;
+    }
+};
