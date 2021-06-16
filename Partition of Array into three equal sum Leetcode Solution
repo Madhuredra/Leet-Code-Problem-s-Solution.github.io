@@ -1,0 +1,24 @@
+class Solution {
+public:
+    bool canThreePartsEqualSum(vector<int>& arr) {
+    //sum of array
+    int sum = 0;
+    for(int i=0;i<arr.size();i++){
+        sum += arr[i];
+    }
+    int pos =0,sum3 =0;
+    //check that can we divide into three parts
+    if(sum%3!=0)
+        return false;
+    //else
+    for(int i=0;i<arr.size();i++){
+        //sum3 is for sum of each  numbers whose sum is equal to totalsum/3;
+        sum3 += arr[i];
+        if(sum3==sum/3){
+            ++pos;
+            sum3 =0 ;
+        }
+    }
+    return pos>=3;
+    }
+};
