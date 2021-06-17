@@ -1,0 +1,12 @@
+C++ solution:
+class Solution {
+public:
+    int maximumProduct(vector<int>& v) {
+    int n = v.size();
+        sort(v.begin() , v.end());
+        int temp1 = v[n-1]*v[n-2]*v[n-3];
+        int temp2 = v[0]*v[1]*v[n-1];
+        return temp1>temp2?temp1:temp2;
+        
+    }
+};
